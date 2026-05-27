@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userRouter from "../router/user.route.js";
 import orderRouter from "../router/order.route.js";
+import zinipayRouter from "../router/zinipay.route.js";
 
 dotenv.config();
 const app = express();
@@ -20,5 +21,6 @@ app.get("/", (req, res) => res.send("Hello World!"));
 
 app.use("/users", userRouter);
 app.use("/orders", orderRouter);
+app.use("/zinipay", zinipayRouter);
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

@@ -21,7 +21,7 @@ export const createOrder = async (req, res) => {
       },
       redirect_url: `${process.env.FRONTEND_URL}/cart/checkout/payment-success`,
       cancel_url: `${process.env.FRONTEND_URL}/cart/checkout/payment-cancelled`,
-      webhook_url: `${process.env.SERVER_URL}/zinpay/payment-webhook`,
+      webhook_url: `${process.env.SERVER_URL}/zinipay/payment-webhook`,
     };
 
     console.log(payload);
