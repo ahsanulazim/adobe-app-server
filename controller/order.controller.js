@@ -14,13 +14,13 @@ export const createOrder = async (req, res) => {
     const payload = {
       cus_name: `${shippingInfo.firstName} ${shippingInfo.lastName}`,
       cus_email: shippingInfo.email || "",
-      amount: totalPrice, // তোমার হিসাব করা totalPrice
+      amount: plan.price, // তোমার হিসাব করা totalPrice
       metadata: {
         order_id: new ObjectId().toString(),
         user_id: userId,
       },
-      redirect_url: `${process.env.FRONTEND_URL}/cart/checkout/payment-success`,
-      cancel_url: `${process.env.FRONTEND_URL}/cart/checkout/payment-cancelled`,
+      redirect_url: `${process.env.FRONTEND_URL}/checkout/payment-success`,
+      cancel_url: `${process.env.FRONTEND_URL}/checkout/payment-cancelled`,
       webhook_url: `${process.env.SERVER_URL}/zinipay/payment-webhook`,
     };
 
